@@ -7,7 +7,7 @@ from sklearn.model_selection import GridSearchCV
 from datetime import datetime
 
 # CSV dosyasını yükle
-df = pd.read_csv("IRIS_deprem.csv")
+df = pd.read_csv("IRIS_eartquake_data.csv")
 
 # Saat biçimini datetime objesine çevir
 df['datetime'] = pd.to_datetime(df[['Year', 'Month', 'Day']].astype(str).agg('-'.join, axis=1) + ' ' + df['Time'])
@@ -115,5 +115,6 @@ print(f"Tahmin edilen gün: {predicted_day}")
 # y_pred = model.predict(X_test)
 # print("MSE:", mean_squared_error(y_test, y_pred))
 # print("R2 Score:", r2_score(y_test, y_pred))
+
 
 # ####
